@@ -11,8 +11,8 @@ Build With:
 The structure of the site got built with HTML and CSS and the script was written by JavaScript.
 
 Deployed Application:
-https://moorgal.github.io/bc2_PortfolioHtmlCss/
+https://moorgal.github.io/bc5_PasswordGenerator/
 
-![alt text](https://github.com/Moorgal/bc2_PortfolioHtmlCss/blob/main/05-javascript-challenge-demo.png)
+![alt text](https://github.com/Moorgal/bc5_PasswordGenerator/blob/main/05-javascript-challenge-demo.png)
 
 <!-- ![alt text](http://url/to/img.png) -->
