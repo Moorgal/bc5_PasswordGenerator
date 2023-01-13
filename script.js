@@ -25,16 +25,19 @@ function getRandom(arr) {
   let index = arr[randomIndex];
   return index;
 }
-let random1 = getRandom(lowerCasedCharacters);
-let random2 = getRandom(upperCasedCharacters);
-let random3 = getRandom(specialCharacters);
-let random4 = getRandom(numericCharacters);
-console.log(random1);
-console.log(random2);
-console.log(random3);
-console.log(random4);
+
 // Function to generate password with user input
-function generatePassword() {}
+function generatePassword() {
+  let charactersGroups = [specialCharacters, numericCharacters, lowerCasedCharacters, upperCasedCharacters];
+  let finalPassword = '';
+  let amount = getPasswordOptions();
+  for (let i = 0; i < amount; i++) {
+    randomGroup = getRandom(charactersGroups);
+    singleCode = getRandom(randomGroup);
+    finalPassword += singleCode;
+  }
+  return finalPassword;
+}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
