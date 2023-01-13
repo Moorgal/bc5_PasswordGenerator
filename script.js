@@ -8,6 +8,7 @@ var lowerCasedCharacters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k
 var upperCasedCharacters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
 let characterGroups = [specialCharacters, numericCharacters, lowerCasedCharacters, upperCasedCharacters];
+let groupNames = ['Special Characters', 'Numeric Characters', 'Lowercase Characters', 'Uppercase Characters'];
 let choosenGroups = [];
 // Function to prompt user for password options
 function getPasswordOptions() {
@@ -15,13 +16,15 @@ function getPasswordOptions() {
   do {
     password = prompt('Please select a length for the password between 10 and 64:');
   } while (password < 10 || password > 64);
-  do {
-    for (let i = 0; i < characterGroups.length; i++) {
-      if (confirm('You need to choose at least one type of character. Would you like to have' + characterGroups[i] + ' in your password? Ok = yes; Cancel = no') == true) {
-        choosenGroups.push(characterGroups[i]);
-      }
+
+  for (let i = 0; i < characterGroups.length; i++) {
+    if (confirm('Would you like to include ' + groupNames[i] + ' in your password? Ok = yes; Cancel = no') == true) {
+      choosenGroups.push(characterGroups[i]);
     }
-  } while (characterGroups.length <= 1);
+  }
+  if (choosenGroups.length < 1) {
+    alert('You need to include at least one type of character');
+  }
   return password;
 }
 console.log(choosenGroups);
@@ -53,6 +56,7 @@ function writePassword() {
   var passwordText = document.querySelector('#password');
 
   passwordText.value = password;
+  choosenGroups = [];
 }
 
 // Add event listener to generate button
