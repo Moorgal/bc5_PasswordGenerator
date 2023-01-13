@@ -20,8 +20,19 @@ function getPasswordOptions() {
 }
 
 // Function for getting a random element from an array
-function getRandom(arr) {}
-
+function getRandom(arr) {
+  let randomIndex = Math.floor(Math.random() * arr.length);
+  let index = arr[randomIndex];
+  return index;
+}
+let random1 = getRandom(lowerCasedCharacters);
+let random2 = getRandom(upperCasedCharacters);
+let random3 = getRandom(specialCharacters);
+let random4 = getRandom(numericCharacters);
+console.log(random1);
+console.log(random2);
+console.log(random3);
+console.log(random4);
 // Function to generate password with user input
 function generatePassword() {}
 
